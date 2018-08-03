@@ -11,21 +11,22 @@ figure {
     background-color: rgba(0, 0, 0, .2);
 }
 figure img {
-    width: 50%;
-}
-figure figcaption {
-    padding: 20px;
-    font-family: Varela Round;
-    font-size: 30px;
+    width: 100%;
 }
 
-/* funding */
-.funding {
+/* funding panel */
+figure figcaption {
+    padding: 10px;
+}
+.funding_panel {
     border-radius: 6px;
     border: 1px solid #777;
     padding: 10px;
-    background-color: rgba(255, 255, 255, .2);
     display: inline-block;
+    background-color: rgba(255, 255, 255, .2);
+    font-family: Varela Round;
+    font-size: 30px;
+    vertical-align: center;
 }
 input[type=number]{
     text-align: center;
@@ -41,4 +42,9 @@ input[type=number]::-webkit-inner-spin-button {
     height: 1em;
     width: 1em;
     vertical-align: middle;
+}
+.funding_btn {
+    border-radius: 8px;
+    font-size: 25px;
+    cursor: pointer;
 }
