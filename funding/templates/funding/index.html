@@ -15,27 +15,21 @@
             <figure>
                 <img src="{% static 'funding/images/'%}{{team}}.jpg" class="img-rounded" alt="Project Poster">
                 <figcaption>
-                <div class="funding font-weight-bold">
-                    <i class="fas fa-piggy-bank"></i>
-                    Fund {{team.project}}
-                    <i class="fa fa-arrow-circle-left" style="font-size:36px" onclick="reduce()"></i>                    
-                    <input type="number" min=0 max=10 value=0 id="myNumber" readonly >
-                    <i class="fa fa-arrow-circle-right" style="font-size:36px" onclick="increase()"></i>
+                <div class="funding_panel font-weight-bold">
+                    {{team.project}}
+                    
+                    <i class="fa fa-arrow-circle-left" onclick="this.nextElementSibling.stepDown()"></i>
+                    
+                    <input type="number" min=0 max=10 value=0 id="fund_team_id_{{team.id}}" readonly >
+                    
+                    <i class="fa fa-arrow-circle-right" onclick="this.previousElementSibling.stepUp()"></i>
+                    
+                    <button type="submit" class="funding_btn"><i class="fas fa-piggy-bank"></i> Fund</button>
                 </div>
                 </figcaption>
-            </figure>        
+            </figure>
         {% endfor %}
     </div>
 </div>
 {% endif %}
-
-<script>
-function increase() {
-    document.getElementById("myNumber").stepUp(1);
-}
-function reduce() {
-    document.getElementById("myNumber").stepDown(1);
-}
-
-</script>
 </body>
