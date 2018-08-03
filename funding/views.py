@@ -5,7 +5,7 @@ from django.views import generic
 
 from .models import Team
 
-class IndexView(generic.ListView):
+class TeamList(generic.ListView):
     template_name = 'funding/index.html'
     queryset = Team.objects.order_by('project')
     context_object_name = 'team_list'
