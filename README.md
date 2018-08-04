@@ -1,2 +1,4 @@
 # Funding-website
-a django website for funding projects
+A django website for funding projects
+
+Funding website: IP:8000/funding
