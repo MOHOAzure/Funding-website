@@ -15,18 +15,15 @@ figure img {
 }
 
 /* funding panel */
-figure figcaption {
-    padding: 10px;
-}
 .funding_panel {
+    margin: 10px 0;
     border-radius: 6px;
-    border: 1px solid #777;
-    padding: 10px;
-    display: inline-block;
     background-color: rgba(255, 255, 255, .2);
     font-family: Varela Round;
     font-size: 30px;
-    vertical-align: center;
+    display: inline-block;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #777;
 }
 input[type=number]{
     text-align: center;
@@ -41,9 +38,8 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 50%;
     height: 1em;
     width: 1em;
-    vertical-align: middle;
 }
-.funding_btn {
+.btn_funding {
     border-radius: 8px;
     font-size: 25px;
     cursor: pointer;
