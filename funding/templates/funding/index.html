@@ -14,22 +14,23 @@
         {% for team in team_list %}
             <figure>
                 <img src="{% static 'funding/images/'%}{{team}}.jpg" class="img-rounded" alt="Project Poster">
-                <figcaption>
                 <div class="funding_panel font-weight-bold">
+                
                     {{team.project}}
-                    
                     <i class="fa fa-arrow-circle-left" onclick="this.nextElementSibling.stepDown()"></i>
                     
-                    <input type="number" min=0 max=10 value=0 id="fund_team_id_{{team.id}}" readonly >
+                    <input type="number" id="team_fund" min=0 max=10 value=0 readonly >
                     
                     <i class="fa fa-arrow-circle-right" onclick="this.previousElementSibling.stepUp()"></i>
                     
-                    <button type="submit" class="funding_btn"><i class="fas fa-piggy-bank"></i> Fund</button>
+                    <button id="btn_fund" class="btn_funding" data-team-id="{{ team.id }}"><i class="fas fa-piggy-bank"></i> Fund</button>
+                
                 </div>
-                </figcaption>
             </figure>
         {% endfor %}
     </div>
 </div>
 {% endif %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'funding/js/set_funding.js' %}"></script>
 </body>
