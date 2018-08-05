@@ -7,20 +7,22 @@
     <link rel="stylesheet" type="text/css" href="{% static 'funding/style.css' %}">
 </head>
 <body>
+        <div id="user_panel">
+            <p><i class="fas fa-piggy-bank"></i> {{user.budget}}</p>
+            <!-- <button id="btn_logout"><a href="/logout">Logout</a></button> -->
+        </div>
 {% if team_list %}
 <div class="container text-center">
     <div class="col">
-        <!-- <div id="user_panel"> -->
-            
-        <!-- </div> -->
         <div id="intro_panel">
-            <p>Welcome, {{ user.get_username }}!</p>
+            <p>Welcome, {{ user }}!</p>
             <p>Please follow steps below to fund project.</p>
             <ul>
-                <li>Step 1. Browse this website, and find a project you want to fund.</li>
+                <li>Step 1. Navigate this website, and find a project you want to fund.</li>
                 <li>Step 2. Click <i class="fa fa-arrow-circle-left"></i> and <i class="fa fa-arrow-circle-right"></i> to decide the amount of funds.</li>
-                <li>Step 3. Click <button class="btn_funding_intro" ><i class="fas fa-piggy-bank"></i> Fund</button> to fund the project</li>
-            </ul>
+                <li>Step 3. Click <button class="btn_funding_intro" ><i class="fas fa-donate"></i></i> Fund</button> to fund the project</li>
+            </ul><br>
+            <p>Notice: Your budget is shown with <i class="fas fa-piggy-bank"></i> on left-hand side</p>
         </div>
     
         <div id="project_team_panel">
@@ -28,16 +30,11 @@
             <figure>
                 <img src="{% static 'funding/images/'%}{{team}}.jpg" class="img-rounded" alt="Project Poster">
                 <div class="funding_panel font-weight-bold">
-                
                     {{team.project}}
-                    <i class="fa fa-arrow-circle-left" onclick="this.nextElementSibling.stepDown()"></i>
-                    
-                    <input type="number" id="team_fund" min=0 max=10 value=0 readonly >
-                    
+                    <i class="fa fa-arrow-circle-left" onclick="this.nextElementSibling.stepDown()"></i>                    
+                    <input type="number" id="team_fund" min=0 max="{{user.budget}}" value=0 readonly >
                     <i class="fa fa-arrow-circle-right" onclick="this.previousElementSibling.stepUp()"></i>
-                    
-                    <button id="btn_fund" class="btn_funding" data-team-id="{{ team.id }}"><i class="fas fa-piggy-bank"></i> Fund</button>
-                
+                    <button class="btn_funding" data-team-id="{{ team.id }}"><i class="fas fa-donate"></i> Fund</button>
                 </div>
             </figure>
         {% endfor %}
