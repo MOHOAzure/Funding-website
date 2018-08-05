@@ -8,9 +8,22 @@
 </head>
 <body>
 {% if team_list %}
-
 <div class="container text-center">
     <div class="col">
+        <!-- <div id="user_panel"> -->
+            
+        <!-- </div> -->
+        <div id="intro_panel">
+            <p>Welcome, {{ user.get_username }}!</p>
+            <p>Please follow steps below to fund project.</p>
+            <ul>
+                <li>Step 1. Browse this website, and find a project you want to fund.</li>
+                <li>Step 2. Click <i class="fa fa-arrow-circle-left"></i> and <i class="fa fa-arrow-circle-right"></i> to decide the amount of funds.</li>
+                <li>Step 3. Click <button class="btn_funding_intro" ><i class="fas fa-piggy-bank"></i> Fund</button> to fund the project</li>
+            </ul>
+        </div>
+    
+        <div id="project_team_panel">
         {% for team in team_list %}
             <figure>
                 <img src="{% static 'funding/images/'%}{{team}}.jpg" class="img-rounded" alt="Project Poster">
@@ -28,6 +41,7 @@
                 </div>
             </figure>
         {% endfor %}
+        </div>
     </div>
 </div>
 {% endif %}
