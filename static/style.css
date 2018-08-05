@@ -1,0 +1,23 @@
+body {
+    background: url("images/background.png");
+}
+
+/* polaroid */
+.login_panel {
+    margin: 100px 0;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, .2);
+    font-family: Varela Round;
+    font-size: 30px;
+    display: inline-block;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #777;
+}
+
+input {
+    border-radius: 10px;    
+}
+
+button[type=submit] {
+    border-radius: 10px;
+}
