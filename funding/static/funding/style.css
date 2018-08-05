@@ -2,8 +2,31 @@ body {
     background: url("images/background.png");
 }
 
+/* user panel */
+/* polaroid */    
+#user_panel {
+    margin: 40px 0;
+    border-radius: 0 6px 6px 0;
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    font-size: 30px;
+    font-family: Varela Round;
+    display: inline-block;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid #777;
+    text-align:left
+}
+#user_panel p {
+    margin: auto;
+}
+#btn_logout {    
+    border-radius: 8px;
+    font-size: inherit;
+}
+
+/* intro panel */
 /* polaroid */
-#user_panel, #intro_panel {
+#intro_panel {
     margin: 10px 0;
     border-radius: 6px;
     background-color: rgba(255, 255, 255, .2);
@@ -14,8 +37,6 @@ body {
     border: 1px solid #777;
     text-align:left
 }
-
-/* intro panel */
 #intro_panel li {
     font-size: 25px;
 }
@@ -24,6 +45,7 @@ body {
     font-size: inherit;
 }
 
+/* project team panel */
 /* polaroid */
 figure {
     border-radius: 10px;
@@ -42,7 +64,7 @@ figure img {
     border-radius: 6px;
     background-color: rgba(255, 255, 255, .2);
     font-family: Varela Round;
-    font-size: 30px;
+    font-size: 40px;
     display: inline-block;
     padding: 5px 15px 5px 15px;
     border: 1px solid #777;
@@ -63,6 +85,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .btn_funding {
     border-radius: 8px;
-    font-size: 25px;
+    font-size: inherit;
     cursor: pointer;
 }
