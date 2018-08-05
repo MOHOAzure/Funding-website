@@ -1,19 +1,16 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
+from django.http import HttpResponse
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from .models import Team
 
-class TeamList(generic.ListView):
+class TeamList(LoginRequiredMixin, generic.ListView):
     template_name = 'funding/index.html'
     queryset = Team.objects.order_by('project')
     context_object_name = 'team_list'
-
-class DetailView(generic.DetailView):
-    model = Team
-    template_name = 'funding/detail.html'
     
+@login_required(login_url='/accounts/login/')
 def fund(request):
     if request.is_ajax():
         team_id = request.POST.get('team_id')
