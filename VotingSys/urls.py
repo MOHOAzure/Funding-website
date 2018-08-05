@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import reverse_lazy
+from django.contrib.auth.views import(
+    LoginView,
+    LogoutView,
+)
 
 urlpatterns = [
     url(r'^funding/', include('funding.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/$', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    url(r'^logout/$', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout')
 ]
