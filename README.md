@@ -1,21 +1,26 @@
-# Funding-website
-A django website for funding projects
+# Funding website
+A django-based website for funding hack day projects
 
 ![](https://i.imgur.com/SCzH9MR.png)
 
 ## Env Requriements
-- Python 2.7
-- Django 1.11
+- Python 3.8.5
+- Django 3.0
 
 ## Run server steps
-  - <opt.> create a user
-  - python manage.py makemigrations funding
-  - python manage.py migrate --run-syncdb
-  - python manage.py runserver
+- python manage.py makemigrations funding
+- python manage.py migrate --run-syncdb
+- python manage.py loaddata init.json (fill db with a superuser, a funder, and a demo project)
+- python manage.py runserver
+  
+  
 
 ## Webpages
-- Admin page: ^admin 
-- Login page: ^login
-- Funding page: ^funding
+- Home/Login page: [site.url]
+	- Account: user_demo / user_password
+- Funding page: [site.url]/funding (redirected after login)
+- Logout page: [site.url]/logout
+- Admin page: [site.url]/admin
+	- Account: admin_demo / admin_demo
 
 
