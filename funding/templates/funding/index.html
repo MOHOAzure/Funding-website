@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'funding/style.css' %}">
 </head>
 <body>
-        <div id="user_panel">
-            <p><i class="fas fa-piggy-bank"></i> {{user.budget}}</p>
-            <!-- <button id="btn_logout"><a href="/logout">Logout</a></button> -->
-        </div>
+<div id="user_panel">
+	<p><i class="fas fa-piggy-bank"></i> {{user.budget}}</p>
+	<!-- <button id="btn_logout"><a href="/logout">Logout</a></button> -->
+</div>
 {% if team_list %}
 <div class="container text-center">
     <div class="col">
@@ -18,11 +18,11 @@
             <p>Welcome, {{ user }}!</p>
             <p>Please follow steps below to fund project.</p>
             <ul>
-                <li>Step 1. Navigate this website, and find a project you want to fund.</li>
+                <li>Step 1. Navigate projects and fund them.</li>
                 <li>Step 2. Click <i class="fa fa-arrow-circle-left"></i> and <i class="fa fa-arrow-circle-right"></i> to decide the amount of funds.</li>
-                <li>Step 3. Click <button class="btn_funding_intro" ><i class="fas fa-donate"></i></i> Fund</button> to fund the project</li>
+                <li>Step 3. Click <button class="btn_funding_intro" ><i class="fas fa-donate"></i></i> Fund</button> to fund a project</li>
             </ul><br>
-            <p>Notice: Your budget is shown with <i class="fas fa-piggy-bank"></i> on left-hand side</p>
+            <p>Notice: Your budget is shown on left-hand side with <i class="fas fa-piggy-bank"></i> </p>
         </div>
     
         <div id="project_team_panel">
@@ -37,6 +37,8 @@
                     <button class="btn_funding" data-team-id="{{ team.id }}"><i class="fas fa-donate"></i> Fund</button>
                 </div>
             </figure>
+		{% empty %}				
+			<p>No project is available.</p>
         {% endfor %}
         </div>
     </div>
